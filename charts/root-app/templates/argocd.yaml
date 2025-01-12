@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: argo-cd
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/dnx-homelab/argocd-chart.git
-    path: charts/root-app/
+    path: charts/argocd
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc

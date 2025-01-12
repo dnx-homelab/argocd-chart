@@ -17,6 +17,13 @@ kubectl create namespace argocd
 helm install argocd -n argocd charts/argocd/
 - Access web UI
 kubectl port-forward svc/argocd-server -n argocd 8080:443
+- Fix "server.secretkey is missing"
+kubectl rollout restart deploy/argocd-server -n argocd
+
+
+## root-app
+- First time apply manually
+helm template root-app/ | kubectl apply -f -
 
 ## Links
 - https://www.arthurkoziel.com/setting-up-argocd-with-helm/
