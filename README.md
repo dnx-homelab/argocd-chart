@@ -6,4 +6,6 @@ https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml
 helm repo add argo-cd https://argoproj.github.io/argo-helm
 - Create Chart.lock file
 helm dep update charts/argocd
+- Install custom chart
+helm install argocd -n argocd charts/argocd/
 
