@@ -19,6 +19,8 @@ helm install argocd -n argocd charts/argocd/
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 - Fix "server.secretkey is missing"
 kubectl rollout restart deploy/argocd-server -n argocd
+- Delete secret created during manual installation
+kubectl delete secret -n argocd -l owner=helm,name=argocd
 
 
 ## root-app
