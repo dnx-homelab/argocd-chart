@@ -1,25 +1,25 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: prometheus
-#  namespace: argocd
-#  finalizers:
-#  - resources-finalizer.argocd.argoproj.io
-#spec:
-#  project: default
-#  source:
-#    repoURL: https://prometheus-community.github.io/helm-charts
-#    chart: prometheus
-#    targetRevision: 26.1.0
-#    helm:
-#      namespace: monitoring
-#      values: |
-#        pushgateway:
-#          enabled: false
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: default
-#  syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: prometheus
+    targetRevision: 26.1.0
+    helm:
+      namespace: monitoring
+      values: |
+        pushgateway:
+          enabled: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
