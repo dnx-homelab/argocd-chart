@@ -4,7 +4,7 @@ metadata:
   name: prometheus-pv-01
 spec:
   capacity:
-    storage: 5Gi
+    storage: 10Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
@@ -19,8 +19,8 @@ metadata:
   name: prometheus-pv-02
 spec:
   capacity:
-    storage: 5Gi
-  #volumeMode: Filesystem
+    storage: 10Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
